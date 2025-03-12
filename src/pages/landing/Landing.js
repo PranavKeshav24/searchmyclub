@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import React, { Suspense } from 'react';
+import Chatbot from '../../components/Chat';
 import Marketing from '../../assets/images/marketing.png';
 import Research from '../../assets/images/research.png';
 import Development from '../../assets/images/dev.png';
@@ -308,6 +309,7 @@ function Landing() {
           <img className="rounded-xl shadow-lg" src={Security} alt="Security" />
         </motion.div>
       </section>
+      <Chatbot />
     </div>
   );
 }

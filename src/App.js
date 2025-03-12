@@ -30,6 +30,7 @@ import CreateClub from './pages/dashboard/CreateClub';
 import Leaderboard from './pages/dashboard/Leaderboard';
 import FAQPage from './pages/FAQ';
 import DisclaimerPage from './pages/Disclaimer';
+import Chatbot from './components/Chat';
 
 function App() {
   return (
@@ -121,6 +122,7 @@ function App() {
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/disclaimer" element={<DisclaimerPage />} />
         </Routes>
+        <Chatbot />
       </Router>
     </>
   );
