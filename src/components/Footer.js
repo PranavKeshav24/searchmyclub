@@ -129,10 +129,10 @@ function Footer() {
             <Brand />
           </a>
 
-          <div class="flex -mx-2">
+          <div class="flex">
             <a
               href="#"
-              class="mx-2 text-gray-600 transition-colors duration-300  hover:text-indigo-500 "
+              class="mr-2 text-gray-600 transition-colors duration-300  hover:text-indigo-500 "
               aria-label="Reddit"
             >
               <svg
@@ -160,7 +160,7 @@ function Footer() {
             </a>
             <a
               href="#"
-              class="mx-2 text-gray-600 transition-colors duration-300  hover:text-indigo-500 "
+              class="ml-2 text-gray-600 transition-colors duration-300  hover:text-indigo-500 "
               aria-label="Github"
             >
               <svg
@@ -173,16 +173,19 @@ function Footer() {
               </svg>
             </a>
           </div>
-          <a
-            className="hitCounter text-primary font-bold w-fit h-full flex justify-center items-center"
-            href="https://visitorshitcounter.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Hit counter"
-            data-name="60cc0426ed3b09599dbf30fab288b9d0|5|external|1|#ffffff|#000000|large|s-hit"
-          >
-            Hit Counter
-          </a>
+          <div className="flex justify-end">
+            {/* <span className="text-black font-bold text-xl">Visits</span> */}
+            <a
+              className="hitCounter text-primary font-bold w-fit h-full flex justify-center items-center"
+              href="https://visitorshitcounter.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Hit counter"
+              data-name="60cc0426ed3b09599dbf30fab288b9d0|5|external|1|#ffffff|#000000|large|s-hit"
+            >
+              Hit Counter
+            </a>
+          </div>
         </div>
       </div>
     </footer>

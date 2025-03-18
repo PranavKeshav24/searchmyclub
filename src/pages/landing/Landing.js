@@ -2,26 +2,14 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import React, { Suspense } from 'react';
 import Chatbot from '../../components/Chat';
-import Marketing from '../../assets/images/marketing.png';
-import Research from '../../assets/images/research.png';
-import Development from '../../assets/images/dev.png';
-import Ui from '../../assets/images/uiux.png';
-import Card from '../../components/Card';
-import Testimonial from '../../components/TestimonialCard';
-import Hero from '../../assets/images/pattern1.jpg';
-import { Navigation, Autoplay, Pagination } from 'swiper';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { useSwiper } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import {
-  IoArrowBack,
-  IoArrowDownCircleOutline,
-  IoArrowForward,
   IoCreateOutline,
   IoNotificationsOutline,
-  IoPeople,
   IoPeopleOutline,
   IoTicketOutline,
 } from 'react-icons/io5';
@@ -31,13 +19,14 @@ import {
   MdOutlinePrivacyTip,
   MdRsvp,
 } from 'react-icons/md';
-import { RiMouseLine, RiSteamLine } from 'react-icons/ri';
+import { CgSearch } from 'react-icons/cg';
 import Hero2 from '../../assets/images/3187910.jpg';
 import Security from '../../assets/images/security.jpg';
 import { InfiniteMovingCards } from './InfiniteCards';
 import People from '../../assets/images/people.png';
 import { motion } from 'framer-motion';
 import SliderClubs from '../../components/SliderClubs';
+import { useNavigate } from 'react-router-dom';
 
 // Typewriter animation for the main text
 const typewriterVariants = {
@@ -98,7 +87,12 @@ const data = [
 function Landing() {
   const swiper = useSwiper();
   const swiperRef = useRef(null);
+  const navigate = useNavigate();
 
+  const handleSubmit = event => {
+    event.preventDefault();
+    navigate('/auth/login'); // Navigate to another route within the app
+  };
   const token = window.localStorage.getItem('token');
 
   return (
@@ -137,7 +131,24 @@ function Landing() {
             >
               Effortless RSVP and Coordination for Creators with SearchMyClub
             </motion.p>
-
+            <motion.div
+              className="md:max-w-[90%] text-base md:text-lg py-4 text-slate-400 flex"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+            >
+              <input
+                type="text"
+                placeholder="Find your favorite clubs and events here"
+                className="w-full h-fit p-2 rounded-lg border border-gray-200 shadow-md"
+              />
+              <button
+                className="px-3 ml-2 bg-indigo-600 text-white justify-center border border-r-0 border-gray-300 rounded-full shadow-md"
+                onClick={handleSubmit}
+              >
+                <CgSearch />
+              </button>
+            </motion.div>
             <motion.div
               className="inline-flex items-center gap-2"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -282,6 +293,7 @@ function Landing() {
               you to concentrate on creating exceptional experiences.
             </p>
           </div>
+
           <motion.div
             className="inline-flex items-center gap-2"
             initial={{ opacity: 0, x: -25 }}

@@ -30,7 +30,7 @@ export const categories = [
     label: 'Charity',
   },
   {
-    label: 'Faishon',
+    label: 'Fashion',
   },
   {
     label: 'Kids',

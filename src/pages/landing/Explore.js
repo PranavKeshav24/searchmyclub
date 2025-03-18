@@ -18,7 +18,7 @@ function Explore() {
   if (loading) return <Loading />;
 
   return (
-    <section className="container py-4 md:py-36">
+    <section className="container h-screen py-4 md:py-36">
       <h1 className="pb-12 text-5xl font-bold text-center">
         Explore the best events happening around you
       </h1>

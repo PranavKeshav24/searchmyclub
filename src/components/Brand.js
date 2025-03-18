@@ -21,7 +21,7 @@ function Brand({ size }) {
             : logo
         }
       />
-      <span
+      {/* <span
         className={
           pathname.includes('dashboard') || pathname.includes('auth')
             ? 'hidden'
@@ -29,7 +29,7 @@ function Brand({ size }) {
         }
       >
         SearchMyClub
-      </span>
+      </span> */}
     </Link>
   );
 }
